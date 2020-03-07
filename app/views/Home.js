@@ -1,5 +1,15 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
+import { 
+  View, 
+  Text,
+  StatusBar
+} from 'react-native';
+
+import * as Constants from '../config/constants';
+
+import { Header } from '../common/components/Header';
+import { HomeSearch } from '../common/components/HomeSearch';
 
 class Home extends Component {
 
@@ -9,16 +19,40 @@ class Home extends Component {
     this.state = {
       data: false,
     };
-    console.log('Home is running!');
   }
 
   render() {
     return (
-      <View>
-        <Text>I am Home!</Text>
+      <View style={styles.homeContainer}>
+        <StatusBar 
+          hidden={true} 
+        />
+        <Header toggleDrawer={() => this.props.navigation.toggleDrawer()} />
+        <View style={styles.homeContentContainer}>
+          <HomeSearch/>
+          <View style={styles.categoryContainer}>
+            
+          </View>
+          <View style={styles.nearShopContainer}>
+            
+          </View>
+        </View>
       </View>
     );
   }
 }
+
+const styles = EStyleSheet.create({
+  homeContainer:  {
+    flex: 1,
+  },
+  homeContentContainer:  {
+    backgroundColor: '#fafafa',
+    flex: 1,
+    padding: 10
+  },
+});
+
+
 
 export default Home;
