@@ -7,8 +7,10 @@ import {
   DrawerItem 
 } from '@react-navigation/drawer';
 import EStyleSheet from 'react-native-extended-stylesheet';
+import { navigationRef } from './rootNavigation';
 
 import Home from '../views/Home';
+import ShopDetails from '../views/ShopDetails';
 
 console.disableYellowBox = true;
 
@@ -40,7 +42,9 @@ class RouterComponent extends Component {
 
   render() {
     return (
-      <NavigationContainer>
+      <NavigationContainer
+        ref={navigationRef}
+      >
         <Drawer.Navigator 
           initialRouteName="Home"
           drawerStyle={styles.drawerStyle}
@@ -50,7 +54,8 @@ class RouterComponent extends Component {
             activeTintColor:  '#000',
           }}
         >
-          <Drawer.Screen name="Home" component={Home} style={{ color: 'green', borderWidth: 1, }} />
+          <Drawer.Screen name="Home" component={Home}/>
+          <Drawer.Screen name="ShopDetails" component={ShopDetails}/>
         </Drawer.Navigator>
       </NavigationContainer>
     );

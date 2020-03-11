@@ -10,6 +10,7 @@ import * as Constants from '../config/constants';
 
 import { Header } from '../common/components/Header';
 import { HomeSearch } from '../common/components/HomeSearch';
+import { Categories } from '../common/components/Categories';
 
 class Home extends Component {
 
@@ -27,12 +28,15 @@ class Home extends Component {
         <StatusBar 
           hidden={true} 
         />
-        <Header toggleDrawer={() => this.props.navigation.toggleDrawer()} />
+        <Header 
+          toggleDrawer={() => this.props.navigation.toggleDrawer()} 
+          leftIcon="bars"
+          rightIcon="user-circle"
+        />
         <View style={styles.homeContentContainer}>
           <HomeSearch/>
-          <View style={styles.categoryContainer}>
-            
-          </View>
+          <Categories/>
+          
           <View style={styles.nearShopContainer}>
             
           </View>
@@ -49,8 +53,10 @@ const styles = EStyleSheet.create({
   homeContentContainer:  {
     backgroundColor: '#fafafa',
     flex: 1,
-    padding: 10
+    paddingVertical: 10,
+    paddingHorizontal: 5
   },
+  
 });
 
 
