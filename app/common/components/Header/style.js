@@ -1,15 +1,15 @@
-import { Dimensions } from 'react-native';
+import { 
+  Dimensions,
+} from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
+import * as Constants from '../../../config/constants';
 
 const styles = EStyleSheet.create({
   headerContainer:  {
-    height: 50,
-    justifyContent: 'center',
-    borderBottomWidth: 1,
-    borderBottomColor: '#ededed',
-    paddingHorizontal: 10,
+    paddingHorizontal: 20,
+    paddingBottom: 10,
     flexDirection: 'row',
-    backgroundColor: '#FFF'
+    backgroundColor: Constants.HEADER_BG_COLOR,
   },
   leftContainer:  {
     flex: 1,
@@ -24,6 +24,10 @@ const styles = EStyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'flex-end',
+  },
+  title: {
+    color: Constants.HEADER_FONT_COLOR,
+    fontWeight: '500'
   },
 });
 

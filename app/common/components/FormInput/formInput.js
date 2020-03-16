@@ -20,16 +20,35 @@ class formInput extends Component {
 
   render() {
     return (
-      <View style={styles.inputContainer}>
+      <View 
+        style={[
+          styles.inputContainer,
+          this.props.containerStyle
+        ]}
+      >
+        {(this.props.label) ? (
+          <Text 
+            style={[
+              styles.labelStyle,
+              this.props.labelStyle
+            ]}
+          >{this.props.label}</Text>
+        ) :  (
+          null
+        )}
+
         {(this.props.icon == 'search') ? (
           <Icon 
             name="search" 
             size={this.props.iconSize ? this.props.iconSize : 20}
-            style={[styles.iconStyle, {
+            style={[
+              styles.iconStyle, {
               color: this.props.iconColor ? this.props.iconColor : Constants.DEFAULT_ICON_COLOR,
-            },  this.props.iconStyle]}
+              },  
+              this.props.iconStyle
+            ]}
           />
-        ) : (
+        ) :  (
           null
         )}
         <TextInput
@@ -44,8 +63,8 @@ class formInput extends Component {
               fontFamily: Constants.FONT_FAMILY,
               color: Constants.FORM_INPUT_COLOR,
             },
+            styles.inputStyle,
             this.props.style, 
-            styles.inputStyle
           ]}
         />
       </View>

@@ -25,14 +25,17 @@ class Header extends Component {
     let button = this.props.leftIcon;
     if(button == 'bars'){
       return (
-        <TouchableOpacity onPress={this.props.toggleDrawer()}>
+        <TouchableOpacity onPress={this.props.toggleDrawer}>
           <Text>
             <Icon 
               name={button} 
-              size={20} 
-              style={{
-                color: Constants.HEADER_ICON_COLOR,
-              }}
+              size={this.props.leftIconSize ? this.props.leftIconSize : 25} 
+              style={[
+                {
+                  color: Constants.HEADER_ICON_COLOR,
+                },
+                this.props.iconStyle
+              ]}
             />
           </Text>
         </TouchableOpacity>
@@ -43,14 +46,77 @@ class Header extends Component {
           <Text>
             <Icon 
               name={button} 
-              size={20} 
-              style={{
-                color: Constants.HEADER_ICON_COLOR,
-              }}
+              size={this.props.leftIconSize ? this.props.leftIconSize : 25} 
+              style={[
+                {
+                  color: Constants.HEADER_ICON_COLOR,
+                },
+                this.props.iconStyle
+              ]}
             />
           </Text>
         </TouchableOpacity>
       )
+    }else if(button == 'chevron-left') {
+      return (
+        <TouchableOpacity onPress={() => navigate('Home')}>
+          <Text>
+            <Icon 
+              name={button} 
+              size={this.props.leftIconSize ? this.props.leftIconSize : 25} 
+              style={[
+                {
+                  color: Constants.HEADER_ICON_COLOR,
+                },
+                this.props.iconStyle
+              ]}
+            />
+          </Text>
+        </TouchableOpacity>
+      )
+    }else{
+      return null;
+    }  
+  }
+
+  rightButton  = ()  =>  {
+    let button = this.props.rightIcon;
+    if(button == 'user-circle'){
+      return (
+        <TouchableOpacity onPress={() => navigate('UserDetails')}>
+          <Text>
+            <Icon 
+              name={button} 
+              size={this.props.rightIconSize ? this.props.rightIconSize : 25}  
+              style={[
+                {
+                  color: Constants.HEADER_ICON_COLOR,
+                },
+                this.props.iconStyle
+              ]}
+            />
+          </Text>
+        </TouchableOpacity>
+      )
+    }else if(button == 'map-marker') {
+      return (
+        <TouchableOpacity>
+          <Text>
+            <Icon 
+              name={button} 
+              size={this.props.rightIconSize ? this.props.rightIconSize : 25} 
+              style={[
+                {
+                  color: Constants.HEADER_ICON_COLOR,
+                },
+                this.props.iconStyle
+              ]}
+            />
+          </Text>
+        </TouchableOpacity>
+      )
+    }else{
+      return null;
     }  
   }
 
@@ -66,18 +132,15 @@ class Header extends Component {
           { this.leftButton() }
         </View>
         <View style={styles.centerContainer}>
-          <Text>{ this.props.title != null ? this.props.title : 'Logo' }</Text>
+          <Text
+            style={[
+              styles.title,
+              this.props.titleStyle
+            ]}
+          >{ this.props.title != null ? this.props.title : 'Logo' }</Text>
         </View>
         <View style={styles.rightContainer}>
-          <Text>
-            <Icon 
-              name={this.props.rightIcon} 
-              size={20} 
-              style={{
-                color: Constants.HEADER_ICON_COLOR,
-              }}
-            />
-          </Text>
+          { this.rightButton() }
         </View>
       </View>
     );

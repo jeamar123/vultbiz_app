@@ -8,6 +8,7 @@ const styles = EStyleSheet.create({
     backgroundColor: '#FFF',
     borderWidth: 1,
     borderColor: '#ededed',
+    borderRadius: 3
   },
 });
 
