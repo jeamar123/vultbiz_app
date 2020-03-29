@@ -137,7 +137,7 @@ class Header extends Component {
               styles.title,
               this.props.titleStyle
             ]}
-          >{ this.props.title != null ? this.props.title : 'Logo' }</Text>
+          >{ this.props.title != null ? this.props.title : Constants.APP_NAME }</Text>
         </View>
         <View style={styles.rightContainer}>
           { this.rightButton() }

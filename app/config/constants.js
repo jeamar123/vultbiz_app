@@ -1,3 +1,6 @@
+// APP NAME
+export const APP_NAME                       = "Bizmode";
+
 /* FONT FAMILY */
 export const FONT_FAMILY                    = "HelveticaNeue"
 export const FONT_FAMILY_REGULAR            = FONT_FAMILY + "-Regular"
@@ -8,9 +11,10 @@ export const FONT_FAMILY_MEDIUM             = FONT_FAMILY + "-Medium"
 export const FONT_FAMILY_BOLD               = FONT_FAMILY + "-Bold"
 
 /* COMPONENT DEFAULT COLORS */
-export const PRIMARY_COLOR                  = "#2F538A"
+// export const PRIMARY_COLOR                  = "#2F538A"
+export const PRIMARY_COLOR                  = "#476A9D"
 export const SECONDAY_COLOR                 = "#c0d0e5"
-export const DEFAULT_BG_COLOR               = "#2F538A"
+export const DEFAULT_BG_COLOR               = "#476A9D"
 export const DEFAULT_FONT_COLOR             = "#444"
 export const DEFAULT_ICON_COLOR             = DEFAULT_FONT_COLOR
 export const DEFAULT_BUTTON_BG_COLOR        = PRIMARY_COLOR

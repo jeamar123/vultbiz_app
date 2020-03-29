@@ -14,6 +14,7 @@ import {
 import EStyleSheet from 'react-native-extended-stylesheet';
 import { navigationRef } from './rootNavigation';
 
+import { SideMenu } from '../common/components/SideMenu';
 import Home from '../views/Home';
 import ShopDetails from '../views/ShopDetails';
 import UserDetails from '../views/UserDetails';
@@ -93,19 +94,21 @@ class RouterComponent extends Component {
   CustomDrawerContent = (props) =>  {
     console.log(props);
     return (
-      <DrawerContentScrollView {...props}>
-        <DrawerItemList {...props}/>
-        <DrawerItem
-          label="Settings"
-          onPress={() => props.navigation.navigate('UserDetails')}
-          style={styles.drawerItemStle}
-        />
-        <DrawerItem
-          label="Logout"
-          // onPress={() => Linking.openUrl('https://mywebsite.com/help')}
-          style={styles.drawerItemStle}
-        />
-      </DrawerContentScrollView>
+      <SideMenu>
+        {/* <DrawerContentScrollView {...props}> */}
+          <DrawerItemList {...props}/>
+          <DrawerItem
+            label="Settings"
+            onPress={() => props.navigation.navigate('UserDetails')}
+            style={styles.drawerItemStle}
+          />
+          <DrawerItem
+            label="Logout"
+            // onPress={() => Linking.openUrl('https://mywebsite.com/help')}
+            style={styles.drawerItemStle}
+          />
+        {/* </DrawerContentScrollView> */}
+      </SideMenu>
     );
   }
 

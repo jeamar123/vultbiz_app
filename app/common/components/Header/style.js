@@ -27,7 +27,8 @@ const styles = EStyleSheet.create({
   },
   title: {
     color: Constants.HEADER_FONT_COLOR,
-    fontWeight: '500'
+    fontWeight: '500',
+    fontSize: 18,
   },
 });
 
