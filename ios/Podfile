@@ -34,7 +34,12 @@ target 'mobile_vultbiz' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
+  pod 'GoogleMaps'
 
+  pod 'react-native-maps', :path => '../node_modules/react-native-maps'
+
+
+  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
 
   target 'mobile_vultbizTests' do
     inherit! :search_paths
@@ -53,3 +58,4 @@ target 'mobile_vultbiz-tvOS' do
   end
 
 end
+
